@@ -153,16 +153,28 @@ mdui-list-item {
     <mdui-button data-fade  style="--lv: 2" type="reset" icon="refresh" variant="tonal" onclick="location.reload()">重置
     </mdui-button>
 
-<br></br><br></br><br></br>
-<mdui-divider></mdui-divider>
 <br></br><br></br>
+<mdui-linear-progress></mdui-linear-progress>
+<br></br><br></br>
+<mdui-tabs value="tab-1">
+  <mdui-tab value="tab-1">5.29</mdui-tab>
+  <mdui-tab value="tab-2">总计</mdui-tab>
 
-
+  <mdui-tab-panel slot="panel" value="tab-1">
+    <br></br>
     <mdui-list-item rounded data-fade  style="--lv: 3">🥶 Top 1 贺容慧  | 5min 20s</mdui-list-item>
     <mdui-list-item rounded data-fade  style="--lv: 4">😰 Top 2 徐从振  | 5min 01s</mdui-list-item>
     <mdui-list-item rounded data-fade  style="--lv: 5">🤓 Top 3 卢荟    | 2min 12s</mdui-list-item>
     <mdui-list-item rounded data-fade  style="--lv: 6">😶 AAA 4 曹根金  | 1min 16s</mdui-list-item>
     <mdui-list-item rounded data-fade  style="--lv: 7">😶 AAA 5 王新    | 0min 34s</mdui-list-item>
+  </mdui-tab-panel>
+  <mdui-tab-panel slot="panel" value="tab-2">
+    <br></br>
+    <mdui-list-item rounded data-fade  style="--lv: 3">😶</mdui-list-item>
+  </mdui-tab-panel>
+</mdui-tabs>
+
+    
   </div>
   </div>
   <div class="wrapper">
