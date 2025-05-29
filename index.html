@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
+  <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.xrbk.cn/fonts/HarmonyOS_Sans_SC/result.css" rel="stylesheet">
+  
+  <style>
+    
+        
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+    body {
+        background-image: url("bg.jpg");
+        background-repeat: no-repeat;
+        font-family: HarmonyOS Sans SC !important;
+        color: #000000;
+        margin: 0 auto !important;
+    }
+    
+    
+
+[data-fade] {
+  --lv: 0;
+  --delay: 0.1s;
+  --start: 0ms;
+  --anima: latter-slice-top;
+}
+@for $i from 1 through 20 {
+  [data-fades] > *:nth-child(#{$i}) {
+    --lv: #{$i};
+  }
+}
+
+[data-fades] > * {
+  --lv: 0;
+  --delay: 0.1s;
+  --start: 0ms;
+  --anima: latter-slice-top;
+  animation: var(--anima) 0.5s both;
+  animation-delay: calc(var(--start) + var(--lv) * var(--delay));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-fades] > *,
+  [data-fade] {
+    animation: var(--anima) 0.5s both;
+    animation-delay: calc(var(--lv) * var(--delay) + var(--start));
+  }
+}
+
+[data-fade-controller="false"][data-fade] {
+  animation: none;
+}
+[data-fades-controller="false"][data-fades] > * {
+  animation: none;
+}
+
+@keyframes latter-slice-top {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    transform: none;
+  }
+}
+@keyframes latter-slice-left {
+  0% {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes latter-slice-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+mdui-list-item {
+  font-size: 24px;
+  border-radius: 2em;
+        backdrop-filter: blur(500px);
+        background-color: var(--white-alpha-10);
+        bottom: 8px;
+        box-shadow: rgba(0, 0, 0, .2) 0 0 5px;
+        max-width: calc(100% - 20px);
+        overflow: hidden;
+        padding: -5px;
+				margin: 5px;
+				min-height: 24px;
+			}
+
+    #ender {
+        font-size: 12px;
+        font-family: Consolas;
+        border-radius: 2em;
+        backdrop-filter: blur(33px);
+        background-color: var(--white-alpha-10);
+        bottom: 10px;
+        box-shadow: rgba(0, 0, 0, .2) 0 0 10px;
+        left: 50%;
+        max-width: calc(100% - 20px);
+        overflow: hidden;
+        padding: 10px;
+        position: fixed;
+        transform: translate(-50%);
+        transition: .25s;
+        white-space: nowrap;
+    }
+  </style>
+
+  
+  <title>title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  
+  <div style="text-align: center;">
+  <div style="width: 50%; position: absolute;left: 50%;transform: translateX(-50%);">
+    
+    <h1 data-fade  style="--lv: 0">拖堂时长大比拼</h1>
+    <mdui-text-field data-fade disabled clearable style="--lv: 1" clearable name="name" label="查找" value="开发中。。。"></mdui-text-field>
+
+    <br></br><br></br>
+    
+    <mdui-button data-fade  style="--lv: 2" type="submit" icon="search" form="myForm">查询
+    </mdui-button>
+
+    <mdui-button data-fade  style="--lv: 2" type="reset" icon="refresh" variant="tonal" onclick="location.reload()">重置
+    </mdui-button>
+
+<br></br><br></br><br></br>
+<mdui-divider></mdui-divider>
+<br></br><br></br>
+
+
+    <mdui-list-item rounded data-fade  style="--lv: 3">🥶 Top 1 贺容慧  | 5min 20s</mdui-list-item>
+    <mdui-list-item rounded data-fade  style="--lv: 4">😰 Top 2 徐从振  | 5min 01s</mdui-list-item>
+    <mdui-list-item rounded data-fade  style="--lv: 5">🤓 Top 3 卢荟    | 2min 12s</mdui-list-item>
+    <mdui-list-item rounded data-fade  style="--lv: 6">😶 AAA 4 曹根金  | 1min 16s</mdui-list-item>
+    <mdui-list-item rounded data-fade  style="--lv: 7">😶 AAA 5 王新    | 0min 34s</mdui-list-item>
+  </div>
+  </div>
+  <div class="wrapper">
+    <div id="ender">
+        信息由人工测量，部分信息可能不准确，仅供娱乐，请勿较真。
+    </div>
+    
+  </div>
+  
+</body>
+</html>
